@@ -1,8 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
-import NavigationLinks from '../components/navigation-links'
 import './listen.css'
 
 const Listen = (props) => {
@@ -13,11 +13,11 @@ const Listen = (props) => {
         <meta property="og:title" content="Listen - DJ Ev Music" />
       </Helmet>
       <div className="listen-code-embed">
-        <div>
+        <React.Fragment>
           <style
             dangerouslySetInnerHTML={{
               __html:
-                "\n@media only screen and (max-width: 767px) {\nh2::after {\ncontent:'Music';\nwhite-space:nowrap;\noverflow:hidden;\noverflow-wrap:normal;\n}\n}\n",
+                "\n@media only screen and (max-width: 767px) {\nh2::after {\ncontent:'Music';\nwhite-space:nowrap;\noverflow:hidden;\noverflow-wrap:normal;\n}\n}\n* {\n  box-sizing:border-box;\n}\n",
             }}
           />
           <svg>
@@ -27,7 +27,7 @@ const Listen = (props) => {
               </filter>
             </defs>
           </svg>
-        </div>
+        </React.Fragment>
       </div>
       <header data-role="Header" className="listen-header">
         <h2 className="listen-text">
@@ -35,7 +35,16 @@ const Listen = (props) => {
           <br></br>
         </h2>
         <div className="listen-nav">
-          <NavigationLinks rootClassName="rootClassName8"></NavigationLinks>
+          <nav className="listen-nav1">
+            <Link to="/" className="listen-navlink">
+              Home
+            </Link>
+            <span className="listen-text03">Listen</span>
+            <Link to="/bookings" className="listen-navlink1">
+              Bookings
+            </Link>
+            <span className="listen-text04">Events</span>
+          </nav>
         </div>
         <div data-role="BurgerMenu" className="listen-burger-menu">
           <svg viewBox="0 0 1024 1024" className="listen-icon toggle">
@@ -43,9 +52,9 @@ const Listen = (props) => {
           </svg>
         </div>
         <div data-role="MobileMenu" className="listen-mobile-menu drawer">
-          <div className="listen-nav1">
+          <div className="listen-nav2">
             <div className="listen-container1">
-              <h2 className="listen-text03">
+              <h2 className="listen-text05">
                 <span>DJ Ev </span>
                 <br></br>
               </h2>
@@ -55,18 +64,18 @@ const Listen = (props) => {
                 </svg>
               </div>
             </div>
-            <nav className="listen-nav2">
+            <nav className="listen-nav3">
               <div className="listen-container2">
-                <span className="listen-text06">Home</span>
+                <span className="listen-text08">Home</span>
               </div>
               <div className="listen-container3">
-                <span className="listen-text07">Listen</span>
+                <span className="listen-text09">Listen</span>
               </div>
               <div className="listen-container4">
-                <span className="listen-text08">Bookings</span>
+                <span className="listen-text10">Bookings</span>
               </div>
               <div className="listen-container5">
-                <span className="listen-text09">Events</span>
+                <span className="listen-text11">Events</span>
               </div>
             </nav>
           </div>
@@ -149,9 +158,14 @@ const Listen = (props) => {
         </div>
       </header>
       <div className="listen-container6">
-        <h1 className="listen-text10">DJ Ev Playlist(Tikilas 10-10-22)</h1>
+        <h1 className="listen-text12">DJ Ev Playlist(Tikilas 10-10-22)</h1>
       </div>
       <div className="listen-separator"></div>
+      <img
+        alt="image"
+        src="https://raw.githubusercontent.com/Alendrone/DJev/a6e8a39bdc2abf028284023939bb733bae19fb36/cdn/beach.png"
+        className="listen-image filtered"
+      />
       <div className="listen-hero vignette">
         <iframe
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1507610770&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"
